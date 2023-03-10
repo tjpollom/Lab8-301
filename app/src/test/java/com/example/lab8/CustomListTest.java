@@ -49,4 +49,29 @@ public class CustomListTest {
         hasCityBool = list.hasCity(testCity);
         assertTrue(hasCityBool);
     }
+
+    @Test
+    public void testCount() {
+        list = mockCityList();
+        City testCity1 = new City("Edmonton", "AB");
+        City testCity2 = new City("Clagary", "AB");
+        int count = list.countCities();
+        assertEquals(0, count);
+        list.addCity(testCity1);
+
+        count = list.countCities();
+        assertEquals(1, count);
+
+        list.addCity(testCity2);
+        count = list.countCities();
+        assertEquals(2, count);
+
+        list.deleteCity(testCity1);
+        count = list.countCities();
+        assertEquals(1, count);
+
+        list.deleteCity(testCity2);
+        count = list.countCities();
+        assertEquals(0, count);
+    }
 }
