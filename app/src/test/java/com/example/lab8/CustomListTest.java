@@ -45,7 +45,7 @@ public class CustomListTest {
         City testCity = new City("Edmonton", "AB");
         boolean hasCityBool = list.hasCity(testCity);
         assertFalse(hasCityBool);
-        list.add(testCity);
+        list.addCity(testCity);
         hasCityBool = list.hasCity(testCity);
         assertTrue(hasCityBool);
     }
